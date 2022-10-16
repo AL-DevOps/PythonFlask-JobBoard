@@ -1,7 +1,7 @@
 node('built-in') {
     stage('checkout code') {
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-privat-key-161022', url: 'https://github.com/AL-DevOps/PythonFlask-JobBoard.git']]])
-   }
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/AL-DevOps/PythonFlask-JobBoard.git']]])
+       }
    stage('build') {
        sh '''docker build -t flask:latest . '''
    }
